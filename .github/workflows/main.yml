@@ -16,10 +16,10 @@ jobs:
             fetch-depth: 0
 
         - name: Maven Build
-          run: maven install 
+          run: mvn install 
 
         - name: upload Build Artifact (WAR)
-          uses: action/upload-articat@v10
+          uses: action/upload-articat@v5
           with: vprofile-app
           path: target/*.war 
 
@@ -32,10 +32,10 @@ jobs:
           uses: actions/checkout@v4
 
         - name: Run test on main branch 
-          run: maven test 
+          run: mvn test 
 
         - name: Checkstyle
-          run: maven checkstyle:checkstyle 
+          run: mvn checkstyle:checkstyle 
 
 
 
